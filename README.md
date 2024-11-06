@@ -54,7 +54,7 @@ POST /eventos/[id]/participantes
   "nome": "Maria Oliveira",
   "email": "maria.oliveira@example.com",
   "eventoId": 1,
-  "status": "Confirmado"
+  "status": true
 }
  ```
 
@@ -82,13 +82,13 @@ Requisição:
 {
   "participanteId": 10,
   "nome": "Maria Oliveira",
-  "statusPresenca": "Presente"
+  "statusPresenca": true
 }
  ```
 
 **Regras:**
-- Marca o participante como presente.
-- Se já marcado como presente, retorna HTTP 409 Conflict.
+- Marca o participante como presente(true).
+- Se já marcado como true, retorna HTTP 409 Conflict.
 - Se o participante não estiver cadastrado, retorna HTTP 404 Not Found.
 
 
@@ -105,13 +105,13 @@ Resposta de Sucesso (200 OK):
       "participanteId": 10,
       "nome": "Maria Oliveira",
       "email": "maria.oliveira@example.com",
-      "statusPresenca": "Presente"
+      "statusPresenca": True
     },
     {
       "participanteId": 11,
       "nome": "José da Silva",
       "email": "jose.silva@example.com",
-      "statusPresenca": "Ausente"
+      "statusPresenca": False
     }
   ]
 }

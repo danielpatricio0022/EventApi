@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository daddy-->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>Rinha2023</artifactId>
+    <artifactId>Api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
