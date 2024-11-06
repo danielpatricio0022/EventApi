@@ -5,6 +5,7 @@ public class ParticipantDTO {
   private Long participanteId;
   private String nome;
   private String email;
+  private int eventId;
   private boolean status;
 
   public Long getParticipanteId() {
@@ -37,5 +38,13 @@ public class ParticipantDTO {
 
   public void setStatus(boolean status) {
     this.status = status;
+  }
+
+  public int getEventId() {
+    return eventId;
+  }
+
+  public void setEventId(int eventId) {
+    this.eventId = eventId;
   }
 }

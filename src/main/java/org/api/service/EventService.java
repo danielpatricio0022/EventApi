@@ -1,5 +1,6 @@
 package org.api.service;
 import org.api.exceptions.ConflictException;
+import org.api.model.DTO.ParticipantDTO;
 import org.api.model.DTO.RequestEventDTO;
 import org.api.model.DTO.ResponseEventDTO;
 import org.api.model.Event;
@@ -40,5 +41,11 @@ public class EventService {
     ); //Validado
 
   }
+
+  public ParticipantDTO addParticipantInEvent(int id, ParticipantDTO participantDTO) {
+    return null;
+  }
+
+
 
 }

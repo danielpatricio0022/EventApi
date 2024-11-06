@@ -7,7 +7,7 @@
     <list default="true" id="9ab3f23a-145c-42ca-a3f5-685365f72202" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/mydb.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/demo/mydb.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/mydb.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/demo/mydb.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/api/model/DTO/ParticipantDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/api/model/DTO/ParticipantDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/api/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/api/service/EventService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
