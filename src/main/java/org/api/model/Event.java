@@ -39,5 +39,56 @@ public class Event {
   @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Participant> participants; // fk
 
+  public @Size(min = 5, max = 100) @NotNull String getName() {
+    return name;
+  }
+
+  public void setName(@Size(min = 5, max = 100) @NotNull String name) {
+    this.name = name;
+  }
+
+  public @NotNull @Size(min = 5, max = 100) String getLocal() {
+    return local;
+  }
+
+  public void setLocal(@NotNull @Size(min = 5, max = 100) String local) {
+    this.local = local;
+  }
+
+  public LocalDateTime getDate() {
+    return date;
+  }
+
+  public void setDate(LocalDateTime date) {
+    this.date = date;
+  }
+
+  public int getVagastotais() {
+    return vagastotais;
+  }
+
+  public void setVagastotais(int vagastotais) {
+    this.vagastotais = vagastotais;
+  }
+
+  public int getVagasDisponiveis() {
+    return vagasDisponiveis;
+  }
+
+  public void setVagasDisponiveis(int vagasDisponiveis) {
+    this.vagasDisponiveis = vagasDisponiveis;
+  }
+
+  public List<Participant> getParticipants() {
+    return participants;
+  }
+
+  public void setParticipants(List<Participant> participants) {
+    this.participants = participants;
+  }
+
+  public int getId() {
+    return id;
+  }
 
 }

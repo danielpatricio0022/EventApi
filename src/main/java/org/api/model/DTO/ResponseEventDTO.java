@@ -11,6 +11,16 @@ public class ResponseEventDTO {
   private int vagasTotais;
   private int vagasDisponiveis;
 
+
+  public ResponseEventDTO(int event_id, String nome, String local, LocalDateTime data, int vagasTotais, int vagasDisponiveis) {
+    this.event_id = event_id;
+    this.nome = nome;
+    this.local = local;
+    this.data = data;
+    this.vagasTotais = vagasTotais;
+    this.vagasDisponiveis = vagasDisponiveis;
+  }
+
   public int getEvent_id() {
     return event_id;
   }
