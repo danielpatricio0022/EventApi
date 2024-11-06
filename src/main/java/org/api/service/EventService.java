@@ -1,4 +1,5 @@
 package org.api.service;
+import org.api.exceptions.ConflictException;
 import org.api.model.DTO.RequestEventDTO;
 import org.api.model.DTO.ResponseEventDTO;
 import org.api.model.Event;
@@ -17,7 +18,7 @@ public class EventService {
             existsByNomeAndData(requestEventDTO.getNome(), requestEventDTO.getData());
 
     if (result) {
-      throw new RuntimeException("Evento já cadastrado");
+      throw new ConflictException("Evento ja cadastrado");// personalized exception
     }
 
     Event event = new Event();
