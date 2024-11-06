@@ -4,7 +4,6 @@ import org.api.model.DTO.ResponseEventDTO;
 import org.api.model.Event;
 import org.api.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,7 +27,7 @@ public class EventService {
     event.setVagastotais(requestEventDTO.getVagasTotais());
     event.setVagasDisponiveis(requestEventDTO.getVagasTotais());
 
-    var data = eventRepository.save(event);
+     eventRepository.save(event);
 
     return new ResponseEventDTO(
             event.getId(),
@@ -37,7 +36,7 @@ public class EventService {
             event.getDate(),
             event.getVagastotais(),
             event.getVagasDisponiveis()
-    );
+    ); //Validado
 
   }
 

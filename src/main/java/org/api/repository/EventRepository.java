@@ -9,7 +9,8 @@ import java.time.LocalDateTime;
 
 public interface EventRepository extends JpaRepository <Event , Integer >
 {
-  @Query(value = "SELECT COUNT(*) > 0 FROM evento WHERE nome = :nome AND data = :data", nativeQuery = true)
-  boolean existsByNomeAndData(@Param("nome") String nome, @Param("data") LocalDateTime data);
+  @Query(value = "SELECT COUNT(*) > 0 FROM event WHERE name = :name AND date = :date", nativeQuery = true)
+  boolean existsByNomeAndData(@Param("name") String name, @Param("date") LocalDateTime date);
 
+// query to check if the event already exists in the database
 }

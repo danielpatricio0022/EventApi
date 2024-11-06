@@ -5,18 +5,18 @@ import java.time.LocalDateTime;
 
 public class RequestEventDTO {
 
-  @NotBlank(message = "O nome é obrigatório e deve ter entre 5 e 100 caracteres.")
-  @Size(min = 5, max = 100, message = "O nome deve ter entre 5 e 100 caracteres.")
+  @NotBlank(message = "the name is required and must have between 5 and 100 characters.")
+  @Size(min = 5, max = 100, message = "the name must have between 5 and 100 characters.")
   private String nome;
 
-  @NotBlank(message = "O local é obrigatório e deve ter entre 5 e 100 caracteres.")
-  @Size(min = 5, max = 100, message = "O local deve ter entre 5 e 100 caracteres.")
+  @NotBlank(message = "The location is required and must have between 5 and 100 characters.")
+  @Size(min = 5, max = 100, message = "The location must have between 5 and 100 characters.")
   private String local;
 
-  @NotNull(message = "A data é obrigatória.")
+  @NotNull(message = "The date is required.")
   private LocalDateTime data;
 
-  @Positive(message = "O número de vagas deve ser um valor positivo.")
+  @Positive(message = "the number of total vacancies must be greater than zero.")
   private int vagasTotais;
 
 
