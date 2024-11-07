@@ -8,6 +8,7 @@ import org.api.service.EventService;
 import org.api.service.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,7 +35,8 @@ public class Controller {
   @PostMapping("/eventos/{id}/participantes")
   public ResponseEntity<ParticipantDTO> addParticipantInEvent(
           @PathVariable("id") int id,
-          @RequestBody @Valid ReqParticipantDTO reqParticipantDTO) {
+          @RequestBody @Validated
+          ReqParticipantDTO reqParticipantDTO) {
 
     ParticipantDTO response = participantService.addParticipantInEvent(id, reqParticipantDTO);
     return ResponseEntity.status(200).body(response);

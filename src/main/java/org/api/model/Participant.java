@@ -1,6 +1,8 @@
 package org.api.model;
 
 import jakarta.persistence.*;
+
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -13,13 +15,15 @@ public class Participant {
     private int id;
 
     @Column(name = "name", nullable = false, length = 100)
-    @Size(max = 100)
+    @Size(min = 1, max = 100)
     @NotNull
+    @NotBlank
     private String name;
 
     @Column(name = "email", nullable = false, length = 100)
-    @Size(max = 100)
+    @Size(min =1 ,max = 100)
     @NotNull
+    @NotBlank
     private String email;
 
     @Column(name = "status", nullable = false, length = 20)

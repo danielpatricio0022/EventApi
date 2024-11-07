@@ -14,5 +14,10 @@ public interface EventRepository extends JpaRepository <Event , Integer >
 
 // query to check if the event already exists in the database
 
+  @Query(value = "SELECT EXISTS(SELECT 1 FROM participant WHERE email = :email)", nativeQuery = true)
+  boolean existsByEmail(@Param("email") String email);
+
+  // query to check if the participant email already exists in the database
+
 
 }

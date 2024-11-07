@@ -1,12 +1,20 @@
 package org.api.model.DTO;
 
-public class ReqParticipantDTO {
-  private String name;
-  private String email;
-  private int eventoId;
+import jakarta.validation.constraints.Size;
 
-  public ReqParticipantDTO() {
-  }
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+public class ReqParticipantDTO {
+
+  @NotBlank(message = "Name is required")
+  private String name;
+
+  @NotBlank(message = "Email is required")
+  @Email(message = "Email is invalid")
+  private String email;
+
+  private int eventoId;
 
   public int getEventoId() {
     return eventoId;
@@ -16,19 +24,19 @@ public class ReqParticipantDTO {
     this.eventoId = eventoId;
   }
 
-  public String getName() {
+  public @NotBlank(message = "Name is required") String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@NotBlank(message = "Name is required") String name) {
     this.name = name;
   }
 
-  public String getEmail() {
+  public @NotBlank(message = "Email is required") String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@NotBlank(message = "Email is required") String email) {
     this.email = email;
   }
 }
