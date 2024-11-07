@@ -29,6 +29,31 @@ import java.util.Date;
       return new ResponseEntity<>(exceptionResponse, HttpStatus.CONFLICT);
     }
 
+    @ExceptionHandler(UnprocessableException.class)
+    public final ResponseEntity<ExceptionResponse> handleUnprocessableException(UnprocessableException ex, WebRequest request) {
+
+      ExceptionResponse exceptionResponse = new ExceptionResponse(
+              new Date(), // timeStamp
+              ex.getMessage(), // message
+              request.getDescription(false) // detalhes da requisição
+      );
+
+      // HTTP 422 (UNPROCESSABLE ENTITY)
+      return new ResponseEntity<>(exceptionResponse, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    public final ResponseEntity<ExceptionResponse> handleNotFoundException(NotFoundException ex, WebRequest request) {
+
+      ExceptionResponse exceptionResponse = new ExceptionResponse(
+              new Date(), // timeStamp
+              ex.getMessage(), // message
+              request.getDescription(false) // detalhes da requisição
+      );
+
+      // HTTP 404 (NOT FOUND)
+      return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
 }
 
 
