@@ -61,6 +61,7 @@ POST /eventos/[id]/participantes
 **Regras:**
 - Participante cadastrado se houver vagas disponíveis.
 - Se o evento estiver lotado, retorna HTTP 422 Unprocessable Entity com mensagem "evento cheio".
+- Se os campos forem vazios ou inválidos, retorna HTTP 422 Unprocessable Entity de sua escolha com ou sem body;
 - O e-mail deve ser único por evento; se o e-mail já estiver cadastrado, retorna HTTP 409 Conflict.
 
 **Verificação de Presença em um Evento**
