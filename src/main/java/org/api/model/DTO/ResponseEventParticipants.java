@@ -8,8 +8,6 @@ public class ResponseEventParticipants {
   private String nomeEvento;
   private List<ParticipantDTO> participantes;
 
-
-
   public Long getEventoId() {
     return eventoId;
   }
