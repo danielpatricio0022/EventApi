@@ -1,14 +1,10 @@
 package org.api.service;
 import org.api.exceptions.ConflictException;
-import org.api.model.DTO.ParticipantDTO;
-import org.api.model.DTO.ReqParticipantDTO;
 import org.api.model.DTO.RequestEventDTO;
 import org.api.model.DTO.ResponseEventDTO;
 import org.api.model.Event;
-import org.api.model.Participant;
 import org.api.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 @Service

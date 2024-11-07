@@ -45,13 +45,13 @@ public class Event {
     // initially, the number of available vacancies is equal to the total number of vacancies
   }
 
+  public Event() {
+  }
 
 
   @Column
   @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Participant> participants; // fk
-
-
 
 
   public @Size(min = 5, max = 100) @NotNull String getName() {

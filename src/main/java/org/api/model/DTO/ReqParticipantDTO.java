@@ -3,8 +3,10 @@ package org.api.model.DTO;
 public class ReqParticipantDTO {
   private String name;
   private String email;
-
   private int eventoId;
+
+  public ReqParticipantDTO() {
+  }
 
   public int getEventoId() {
     return eventoId;
