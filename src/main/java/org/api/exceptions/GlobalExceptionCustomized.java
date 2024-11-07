@@ -46,7 +46,7 @@ import java.util.stream.Collectors;
             String.join(", ", errors)
     );
 
-    // Retornando HTTP 400 (BAD REQUEST) com a lista de erros
+    //400 (BAD REQUEST)
     return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
   }
 
