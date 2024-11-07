@@ -1,18 +1,12 @@
 package org.api.controller;
 import jakarta.validation.Valid;
-import org.api.model.DTO.ParticipantDTO;
-import org.api.model.DTO.ReqParticipantDTO;
-import org.api.model.DTO.RequestEventDTO;
-import org.api.model.DTO.ResponseEventDTO;
+import org.api.model.DTO.*;
 import org.api.service.EventService;
 import org.api.service.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
@@ -42,7 +36,21 @@ public class Controller {
     return ResponseEntity.status(200).body(response);
   }
 
+  @PostMapping("/eventos/{id}/presenca")
+
+  public ResponseEntity<ResponsePresencaDTO> addPresenceInEvent(
+          @PathVariable("id") int id,
+          @RequestBody @Valid ReqPresencaDTO reqPresencaDTO) {
+
+    ResponsePresencaDTO response = participantService.participantIsPresentEvent(reqPresencaDTO, id);
+    return ResponseEntity.status(200).body(response);
+  }
 
 
+  @GetMapping("/eventos/{id}/participantes")
+      public ResponseEntity<RsEventParticipantsDTO> getParticipantsByEventId(@PathVariable("id") int id) {
+          RsEventParticipantsDTO response = participantService.getParticipantsTotal(id);
+          return ResponseEntity.status(200).body(response);
+      }
 
 }

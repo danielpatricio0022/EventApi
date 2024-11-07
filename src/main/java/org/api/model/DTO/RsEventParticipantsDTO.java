@@ -2,11 +2,17 @@ package org.api.model.DTO;
 
 import java.util.List;
 
-public class ResponseEventParticipants {
+public class RsEventParticipantsDTO {
 
   private Long eventoId;
   private String nomeEvento;
   private List<ParticipantDTO> participantes;
+
+    public RsEventParticipantsDTO(Long eventoId, String nomeEvento, List<ParticipantDTO> participantes) {
+        this.eventoId = eventoId;
+        this.nomeEvento = nomeEvento;
+        this.participantes = participantes;
+    }
 
   public Long getEventoId() {
     return eventoId;
