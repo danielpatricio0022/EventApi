@@ -31,24 +31,6 @@ import java.util.stream.Collectors;
       return new ResponseEntity<>(exceptionResponse, HttpStatus.CONFLICT);
     }
 
-  @ExceptionHandler(MethodArgumentNotValidException.class)
-  public ResponseEntity<ExceptionResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
-
-    List<String> errors = ex.getBindingResult()
-            .getAllErrors()
-            .stream()
-            .map(error -> ((FieldError) error).getDefaultMessage())
-            .collect(Collectors.toList());
-
-    ExceptionResponse exceptionResponse = new ExceptionResponse(
-            new Date(),
-            "Validation failed",
-            String.join(", ", errors)
-    );
-
-    //400 (BAD REQUEST)
-    return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
-  }
 
     @ExceptionHandler(UnprocessableException.class)
     public final ResponseEntity<ExceptionResponse> handleUnprocessableException(UnprocessableException ex, WebRequest request) {
